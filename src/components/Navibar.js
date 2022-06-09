@@ -1,34 +1,34 @@
-import React from 'react';
-import { Navbar, Nav, Button } from 'react-bootstrap';
-import {Link} from 'react-router-dom'
-
-import About from '../pages/About';
-import Users from '../pages/Users';
-import Home from '../pages/Home';
-
+import { Navbar, Nav, Button, Container, NavDropdown } from 'react-bootstrap';
+//Context
+import { AuthContext } from '../context/index';
+import { useContext } from 'react'
 
 export const Navibar = () => {
+    // const [isAuth, setAuth] = useContext(AuthContext);
+
+    const exit = () => {
+        // sessionStorage.setItem('auth', 'false');
+        // setAuth(false);
+        console.log('exit')
+    }
+
     return (
-        <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                {/* className='d-flex justify-content-evenly'> */}
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Container fluid>
                 <Navbar.Brand className='ms-5'>WebDevBlog</Navbar.Brand>
-                <Navbar.Toggle className='me-5' aria-controls='responsive-navbar-nav' />
-
-                <Nav className='ms-auto flex-row'>
-                    <Button className='mx-1' variant='primary' >Log in</Button>
-                    <Button className='mx-1' variant='primary'>Exit</Button>
-                </Nav>
-
-                <Navbar.Collapse id='responsive-navbar-nav'>
-                    <Nav className='me-auto'>
-                        <Nav.Link><Link to='/home'>Home</Link></Nav.Link>
-                        <Nav.Link><Link to='/users'>Users</Link></Nav.Link>
-                        <Nav.Link><Link to='/about'>About</Link></Nav.Link>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse>
+                    <Nav className="me-auto">
+                        <Nav.Link href='/home'>Home</Nav.Link>
+                        <Nav.Link href='/users'>Users</Nav.Link>
+                        <Nav.Link href='/about'>About</Nav.Link>
+                    </Nav>
+                    <Nav>
+                        <Nav.Link href='#login'>Login</Nav.Link>
+                        <Nav.Link href='#exit' onClick={exit}>Exit</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-               
-            </Navbar>
-        </>
+            </Container>
+        </Navbar>
     );
 };
