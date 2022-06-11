@@ -33,7 +33,7 @@ export const Navibar = () => {
                             <Nav.Link href='/users'>Users</Nav.Link>
                             <Nav.Link href='/about'>About</Nav.Link>
                         </Nav>
-                        <Nav className='ms-auto'>
+                        <Nav className='ms-auto me-5'>
                             <Nav.Link href='#exit' onClick={exit}>Exit</Nav.Link>
                         </Nav>
                     </>
@@ -41,7 +41,7 @@ export const Navibar = () => {
                     <>
                         <Nav>
                         </Nav>
-                        <Nav className='ms-auto'>
+                        <Nav className='ms-auto me-5'>
                             <Nav.Link href='#login' onClick={login}>Login</Nav.Link>
                         </Nav>
                     </>
