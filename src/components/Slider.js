@@ -11,7 +11,7 @@ const imgStyles = `w-responsive text-center mx-auto p-1 mt-1 w-50`;
 
 const Slider = () => {
   return (
-      <Carousel fade>
+      <Carousel variant='dark' fade>
         <Carousel.Item>
           <img className={imgStyles} src={pics[0]} alt="Carousel img" />
           <Carousel.Caption>

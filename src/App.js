@@ -13,6 +13,7 @@ import { AuthContext } from './context'
 
 const App = () => {
   const [isAuth, setAuth] = useState(false);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     if (localStorage.getItem('auth')) {
@@ -21,7 +22,7 @@ const App = () => {
   }, [])
 
   return (
-    <AuthContext.Provider value={{ isAuth, setAuth }}>
+    <AuthContext.Provider value={{ isAuth, setAuth, isLoading }}>
 
       <BrowserRouter>
         <div className="App">
