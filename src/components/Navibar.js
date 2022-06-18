@@ -5,39 +5,35 @@ import { Navbar, Nav, Container, Modal, Button, Form, Spinner } from 'react-boot
 import { AuthContext } from '../context';
 import { useContext } from 'react'
 
-// MySpinner
-import MySpinner from './MySpinner';
 import HeaderLinks from './HeaderLinnks'
 
 export const Navibar = () => {
     const { isAuth, setAuth, isLoading } = useContext(AuthContext);
-    const [showModal, setShowModal] = useState(false);
+    const [modalShow, setModalShow] = useState(false);
 
     console.log(isAuth);
     console.log(isLoading);
 
-    const handleShow = () => {
-        setShowModal(true);
+    const showModal = () => {
+        setModalShow(true);
     }
-    const handleClose = () => {
-        setShowModal(false)
+    const hideModal = () => {
+        setModalShow(false)
     };
-
     const login = () => {
         localStorage.setItem('auth', 'true');
         setAuth(true);
     }
-
-    const exit = () => {
+    const logout = () => {
         localStorage.setItem('auth', 'false');
         setAuth(false);
         console.log('exit')
     }
-
     const handleSubmit = () => {
-        setShowModal(false);
+        setModalShow(false);
         login();
     };
+
 
     return (
         <>
@@ -51,14 +47,22 @@ export const Navibar = () => {
                                 <HeaderLinks />
 
                                 <Nav className='ms-auto'>
-                                    <Nav.Link href='#exit' onClick={exit}>Exit</Nav.Link>
+                                    <Nav.Link
+                                        href='#exit'
+                                        onClick={logout}>
+                                        Exit
+                                    </Nav.Link>
                                 </Nav>
                             </>
                             :
                             <>
-
                                 <Nav className='ms-auto'>
-                                    <Nav.Link className='ms-auto' href='#login' onClick={handleShow}>Login</Nav.Link>
+                                    <Nav.Link
+                                        className='ms-auto'
+                                        href='#login'
+                                        onClick={showModal}>
+                                        Login
+                                    </Nav.Link>
                                 </Nav>
                             </>
                         }
@@ -66,7 +70,7 @@ export const Navibar = () => {
                 </Container>
             </Navbar>
 
-            <Modal show={showModal} onHide={handleClose}>
+            <Modal show={modalShow} onHide={hideModal}>
                 <Form onSubmit={handleSubmit}>
                     <Modal.Header closeButton>
                         <Modal.Title>Let here be authentification window!</Modal.Title>
