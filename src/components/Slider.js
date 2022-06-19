@@ -14,30 +14,18 @@ const Slider = () => {
       <Carousel variant='dark' fade>
         <Carousel.Item>
           <img className={imgStyles} src={pics[0]} alt="Carousel img" />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-          </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item>
           <img className={imgStyles} src={pics[1]} alt="Carousel img" />
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-          </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item>
           <img className={imgStyles} src={pics[2]} alt="Carousel img" />
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-          </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item>
           <img className={imgStyles} src={pics[3]} alt="Carousel img" />
-          <Carousel.Caption>
-            <h3>Fourth slide label</h3>
-          </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
   );

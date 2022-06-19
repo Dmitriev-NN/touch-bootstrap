@@ -13,7 +13,8 @@ import { AuthContext } from './context'
 
 const App = () => {
   const [isAuth, setAuth] = useState(false);
-  const [isLoading, setLoading] = useState(true);
+  // const [isLoading, setLoading] = useState(true);
+  // Left for fetching data from server
 
   useEffect(() => {
     if (localStorage.getItem('auth')) {
@@ -22,17 +23,23 @@ const App = () => {
   }, [])
 
   return (
-    <AuthContext.Provider value={{ isAuth, setAuth, isLoading }}>
+    <AuthContext.Provider value={{
+      isAuth,
+      setAuth,
+      // isLoading
+      }}>
 
       <BrowserRouter>
-        <div className="App">
+        <div id='wrapper'>
           <Navibar />
-          <Routes>
-            <Route path='/home' element={<Home />} />
-            <Route path='/' element={<MainPage />} />
-            <Route path='/users' element={<Users />} />
-            <Route path='/about' element={<About />} />
-          </Routes>
+          <div className="App">
+            <Routes>
+              <Route path='/home' element={<Home />} />
+              <Route path='/' element={<MainPage />} />
+              <Route path='/users' element={<Users />} />
+              <Route path='/about' element={<About />} />
+            </Routes>
+          </div>
         </div>
       </BrowserRouter>
 
