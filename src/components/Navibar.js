@@ -11,9 +11,6 @@ export const Navibar = () => {
     const { isAuth, setAuth, isLoading } = useContext(AuthContext);
     const [modalShow, setModalShow] = useState(false);
 
-    console.log(isAuth);
-    console.log(isLoading);
-
     const showModal = () => {
         setModalShow(true);
     }
@@ -34,12 +31,11 @@ export const Navibar = () => {
         login();
     };
 
-
     return (
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container className="mx-5" fluid>
-                    <Navbar.Brand>WebDevBlog</Navbar.Brand>
+                    <Navbar.Brand>Strange Planet</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse>
                         {isAuth ?
