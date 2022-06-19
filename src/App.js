@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter} from 'react-router-dom';
 // Components
 import { Navibar } from './components/Navibar';
-import About from './pages/About';
-import Users from './pages/Users';
-import Home from './pages/Home'
-import MainPage from './pages/MainPage';
+import Router from './components/Router';
+import Footer from './components/Footer'
+
+
 //Context
 import { AuthContext } from './context'
 
@@ -30,19 +30,12 @@ const App = () => {
       }}>
 
       <BrowserRouter>
-        <div id='wrapper'>
+        <div className='AppWrapper'>
           <Navibar />
-          <div className="App">
-            <Routes>
-              <Route path='/home' element={<Home />} />
-              <Route path='/' element={<MainPage />} />
-              <Route path='/users' element={<Users />} />
-              <Route path='/about' element={<About />} />
-            </Routes>
-          </div>
+          <Router/>
+          <Footer />
         </div>
       </BrowserRouter>
-
     </AuthContext.Provider>
   );
 }
