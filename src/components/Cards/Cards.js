@@ -1,12 +1,11 @@
 import { Container, Button, Card, Row, Col } from "react-bootstrap";
-import styled from "styled-components";
 
-import {cardsContent as content} from './cardsContent'
+import { cardsContent as content } from './cardsContent'
 
 const Cards = () => {
   return (
-    <>
-      <Container className='d-flex flex-nowrap justify-content-center py-5 px-2'>
+    <div className='cardsWrapper'>
+      <Container className='d-flex flex-nowrap justify-content-center py-2'>
         <Row>
           {content.map((i) =>
             <Col key={i.img} style={{ maxWidth: '35vmin' }}>
@@ -21,8 +20,8 @@ const Cards = () => {
             </Col>
           )}
         </Row>
-      </Container>
-    </>
+      </Container >
+    </div>
   );
 };
 
