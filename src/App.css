@@ -1,26 +1,53 @@
-.App {
-  text-align: center;
+/* bg for entire App */
+.AppWrapper {
+  background: #000;
+  background: linear-gradient(rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)),
+    url('./img/bgimg.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.cardsWrapper {
+  background: linear-gradient(rgba(33, 37, 41, 0.01),
+  rgba(0, 0, 0, 0.9));
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .spinning-logo {
-  position: absolute;
-  top: 45%;
+  height: 20vmin;
   margin: 0 auto;
-  min-width: 50px;
-  max-width: 15%;
-  animation:spin 8s linear infinite;
-  -webkit-animation:spin 8s linear infinite;
-  -moz-animation:spin 8s linear infinite;
+  left: 0;
+  right: 0;
+  position: absolute;
+  top: calc(50% - 20vmin);
+
+  animation: spin 8s linear infinite;
+  -webkit-animation: spin 8s linear infinite;
+  -moz-animation: spin 8s linear infinite;
 }
-@keyframes spin { 
-  100% { 
-      -webkit-transform: rotate(360deg); 
-      transform:rotate(360deg); 
-  } 
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
-@-webkit-keyframes spin { 
-  100% { -webkit-transform: rotate(360deg); } 
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
-@-moz-keyframes spin { 
-  100% { -moz-transform: rotate(360deg); } 
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
 }
